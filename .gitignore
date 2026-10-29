@@ -1,0 +1,44 @@
+# ==============================================================================
+# .gitignore for takhyrov-alinur-student-api (Alinur Takhyrov - ID: 38110)
+# ==============================================================================
+
+# Gradle build and cache directories
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Compiled class files
+*.class
+*.jar
+*.war
+*.ear
+
+# IDE and Editor configurations
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.settings/
+.classpath
+.project
+
+# Sensitive environment variables, secrets & credentials (TASK 2.4 REQUIREMENT)
+.env
+.env.*
+*.env
+*.pem
+*.key
+*.secret
+credentials.json
+docker/.env
+
+# Temporary and local log files
+*.log
+!logs/Takhyrov_Alinur_system_report.log
+!logs/Takhyrov_Alinur_log_analysis.txt
+
+# Operating System specific files
+.DS_Store
+Thumbs.db
+desktop.ini

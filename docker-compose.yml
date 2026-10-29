@@ -1,0 +1,82 @@
+# ==============================================================================
+# DevOps Midterm Project - Docker Compose Specification
+# Student: Alinur Takhyrov
+# Student ID: 38110
+# Project Name: takhyrov-alinur-student-api
+# ==============================================================================
+
+name: takhyrov-alinur-student-api
+
+services:
+  # ----------------------------------------------------------------------------
+  # PostgreSQL Database Service
+  # ----------------------------------------------------------------------------
+  postgres:
+    image: postgres:16-alpine
+    container_name: takhyrov-student-db
+    restart: always
+    environment:
+      POSTGRES_DB: studentdb
+      POSTGRES_USER: takhyrov
+      POSTGRES_PASSWORD: takhyrov_secret_38110
+    ports:
+      - "5432:5432"
+    volumes:
+      - takhyrov-postgres-data:/var/lib/postgresql/data
+    networks:
+      - takhyrov-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U takhyrov -d studentdb"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  # ----------------------------------------------------------------------------
+  # Spring Boot Application Service
+  # ----------------------------------------------------------------------------
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: takhyrov-alinur-student-api:v1.0-takhyrov-alinur
+    container_name: takhyrov-student-app
+    restart: on-failure
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: studentdb
+      DB_USER: takhyrov
+      DB_PASSWORD: takhyrov_secret_38110
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/studentdb
+      SPRING_DATASOURCE_USERNAME: takhyrov
+      SPRING_DATASOURCE_PASSWORD: takhyrov_secret_38110
+      APP_AUTHOR_NAME: "Alinur Takhyrov"
+      APP_AUTHOR_STUDENT_ID: "38110"
+      APP_AUTHOR_GITHUB: "defnotslim34"
+    ports:
+      - "8080:8080"
+    networks:
+      - takhyrov-network
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8080/api/students/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 25s
+
+# ------------------------------------------------------------------------------
+# Dedicated Docker Networks & Persistent Named Volumes
+# ------------------------------------------------------------------------------
+networks:
+  takhyrov-network:
+    name: takhyrov-network
+    driver: bridge
+
+volumes:
+  takhyrov-postgres-data:
+    name: takhyrov-postgres-data
+    driver: local
