@@ -57,4 +57,9 @@ public class StudentService {
     public List<Student> searchStudents(String query) {
         return studentRepository.findByMajorContainingIgnoreCaseOrLastNameContainingIgnoreCase(query, query);
     }
+
+    @Transactional(readOnly = true)
+    public List<Student> getHonorRollStudents(Double minGpa) {
+        return studentRepository.findByGpaGreaterThanEqualOrderByGpaDesc(minGpa != null ? minGpa : 3.5);
+    }
 }

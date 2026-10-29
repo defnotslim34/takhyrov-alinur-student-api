@@ -69,6 +69,11 @@ public class StudentController {
         return ResponseEntity.ok(studentService.searchStudents(query));
     }
 
+    @GetMapping("/honor-roll")
+    public ResponseEntity<List<Student>> getHonorRollStudents(@RequestParam(defaultValue = "3.5") Double minGpa) {
+        return ResponseEntity.ok(studentService.getHonorRollStudents(minGpa));
+    }
+
     @GetMapping("/info")
     public ResponseEntity<Map<String, Object>> getDeveloperInfo() {
         Map<String, Object> info = new HashMap<>();
