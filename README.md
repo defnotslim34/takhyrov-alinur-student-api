@@ -7,46 +7,46 @@
 
 ---
 
-## 📌 Project Overview
-`takhyrov-alinur-student-api` is an enterprise-grade RESTful Spring Boot application built by Alinur Takhyrov (Main Branch Production Version - ID: 38110) optimized for high throughput, PostgreSQL persistence, and robust Docker containerization.
+## рџ“Њ Project Overview
+`takhyrov-alinur-student-api` is an enterprise-grade RESTful Spring Boot application created by Alinur Takhyrov (Student ID: 38110) combining robust production architecture (PostgreSQL persistence, multi-stage Docker builds, Jenkins CI/CD automation) with comprehensive API documentation and testing standards.
 
 ---
 
-## 🏗 Project Architecture & Structure
+## рџЏ— Project Architecture & Structure
 
 ```text
 takhyrov-alinur-student-api/
-├── scripts/
-│   └── Takhyrov_Alinur_system_report.sh    # System monitoring & audit script
-├── logs/
-│   ├── Takhyrov_Alinur_system_report.log   # System monitoring output logs
-│   └── Takhyrov_Alinur_log_analysis.txt    # Log search & analysis output
-├── backups/
-│   └── Takhyrov_Alinur_README_backup.md    # Backup archive of documentation
-├── src/
-│   ├── main/
-│   │   ├── java/com/alinur/studentapi/
-│   │   │   ├── controller/                 # REST Controller endpoints
-│   │   │   ├── model/                      # JPA Entities & DTOs
-│   │   │   ├── repository/                 # Spring Data JPA Repository
-│   │   │   ├── service/                    # Business logic layer
-│   │   │   ├── exception/                  # Error handling & custom exceptions
-│   │   │   └── StudentApiApplication.java  # Main application entry point
-│   │   └── resources/
-│   │       └── application.properties      # PostgreSQL datasource & JPA configs
-│   └── test/                               # JUnit 5 & MockMvc automated tests
-├── Dockerfile                              # Multi-stage production container build
-├── docker-compose.yml                      # App + PostgreSQL container orchestration
-├── Jenkinsfile                             # Multi-stage Declarative CI/CD pipeline
-├── build.gradle                            # Gradle dependencies & build plugins
-├── settings.gradle                         # Gradle project definitions
-├── .gitignore                              # Git exclusion rules
-└── README.md                               # Project documentation
+в”њв”Ђв”Ђ scripts/
+в”‚   в””в”Ђв”Ђ Takhyrov_Alinur_system_report.sh    # System monitoring & audit script
+в”њв”Ђв”Ђ logs/
+в”‚   в”њв”Ђв”Ђ Takhyrov_Alinur_system_report.log   # System monitoring output logs
+в”‚   в””в”Ђв”Ђ Takhyrov_Alinur_log_analysis.txt    # Log search & analysis output
+в”њв”Ђв”Ђ backups/
+в”‚   в””в”Ђв”Ђ Takhyrov_Alinur_README_backup.md    # Backup archive of documentation
+в”њв”Ђв”Ђ src/
+в”‚   в”њв”Ђв”Ђ main/
+в”‚   в”‚   в”њв”Ђв”Ђ java/com/alinur/studentapi/
+в”‚   в”‚   в”‚   в”њв”Ђв”Ђ controller/                 # REST Controller endpoints
+в”‚   в”‚   в”‚   в”њв”Ђв”Ђ model/                      # JPA Entities & DTOs
+в”‚   в”‚   в”‚   в”њв”Ђв”Ђ repository/                 # Spring Data JPA Repository
+в”‚   в”‚   в”‚   в”њв”Ђв”Ђ service/                    # Business logic layer
+в”‚   в”‚   в”‚   в”њв”Ђв”Ђ exception/                  # Error handling & custom exceptions
+в”‚   в”‚   в”‚   в””в”Ђв”Ђ StudentApiApplication.java  # Main application entry point
+в”‚   в”‚   в””в”Ђв”Ђ resources/
+в”‚   в”‚       в””в”Ђв”Ђ application.properties      # PostgreSQL datasource & JPA configs
+в”‚   в””в”Ђв”Ђ test/                               # JUnit 5 & MockMvc automated tests
+в”њв”Ђв”Ђ Dockerfile                              # Multi-stage production container build
+в”њв”Ђв”Ђ docker-compose.yml                      # App + PostgreSQL container orchestration
+в”њв”Ђв”Ђ Jenkinsfile                             # Multi-stage Declarative CI/CD pipeline
+в”њв”Ђв”Ђ build.gradle                            # Gradle dependencies & build plugins
+в”њв”Ђв”Ђ settings.gradle                         # Gradle project definitions
+в”њв”Ђв”Ђ .gitignore                              # Git exclusion rules
+в””в”Ђв”Ђ README.md                               # Project documentation
 ```
 
 ---
 
-## 🚀 REST API Endpoints
+## рџљЂ REST API Endpoints
 
 Base URL: `http://localhost:8080/api/students`
 
@@ -64,7 +64,7 @@ Base URL: `http://localhost:8080/api/students`
 
 ---
 
-## 🛠 Prerequisites & Technologies
+## рџ›  Prerequisites & Technologies
 - **Java:** JDK 17 (Eclipse Temurin / OpenJDK)
 - **Build Tool:** Gradle 8.x
 - **Framework:** Spring Boot 3.2.x (Spring Web, Spring Data JPA, Validation)
@@ -75,7 +75,7 @@ Base URL: `http://localhost:8080/api/students`
 
 ---
 
-## 🌟 Feature Highlight (Branch: `feature/takhyrov-alinur-crud`)
+## рџЊџ Feature Highlight (Branch: `feature/takhyrov-alinur-crud`)
 - **Developer:** Alinur Takhyrov (ID: 38110)
 - **Implemented Feature:** Added `/api/students/honor-roll` endpoint with filtering query parameter (`minGpa`, default `3.5`). Automatically filters students who qualified for Dean's List and orders them in descending order of GPA.
 
