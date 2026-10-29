@@ -58,6 +58,7 @@ Base URL: `http://localhost:8080/api/students`
 | `PUT` | `/api/students/{id}` | Update existing student record | `200 OK` / `404 Not Found` |
 | `DELETE` | `/api/students/{id}` | Delete student record | `204 No Content` / `404 Not Found` |
 | `GET` | `/api/students/search` | Search students by email or major | `200 OK` |
+| `GET` | `/api/students/honor-roll` | Retrieve honor roll students (GPA >= 3.5) by Alinur Takhyrov | `200 OK` |
 | `GET` | `/api/students/info` | Developer & student verification metadata | `200 OK` |
 | `GET` | `/api/students/health` | Service health status check | `200 OK` |
 
@@ -71,3 +72,10 @@ Base URL: `http://localhost:8080/api/students`
 - **Containerization:** Docker & Docker Compose
 - **CI/CD Automation:** Jenkins (Declarative Pipeline)
 - **Scripting & VCS:** Bash, Git, GitHub
+
+---
+
+## 🌟 Feature Highlight (Branch: `feature/takhyrov-alinur-crud`)
+- **Developer:** Alinur Takhyrov (ID: 38110)
+- **Implemented Feature:** Added `/api/students/honor-roll` endpoint with filtering query parameter (`minGpa`, default `3.5`). Automatically filters students who qualified for Dean's List and orders them in descending order of GPA.
+
