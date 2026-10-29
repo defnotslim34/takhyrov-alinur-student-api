@@ -8,7 +8,7 @@
 ---
 
 ## 📌 Project Overview
-`takhyrov-alinur-student-api` is an enterprise-grade RESTful Spring Boot application built with Java 17, Gradle, PostgreSQL, Docker, Docker Compose, and Jenkins CI/CD pipeline automation. It implements comprehensive CRUD operations for student entities, health checks, centralized exception handling, automated unit/integration tests, and Linux administrative monitoring utilities.
+`takhyrov-alinur-student-api` is an enterprise-grade RESTful Spring Boot application built by Alinur Takhyrov (Main Branch Production Version - ID: 38110) optimized for high throughput, PostgreSQL persistence, and robust Docker containerization.
 
 ---
 
